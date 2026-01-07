@@ -1,0 +1,252 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Elegant Background ===== */
+body {
+    background-image: url("SHIT.php.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+/* Soft gradient overlay */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.55), rgba(0,80,44,0.6));
+    z-index: 0;
+}
+
+/* ===== Header ===== */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #fff;
+    background: rgba(0,77,42,0.85);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+/* ===== Main Content ===== */
+main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center content horizontally */
+    z-index: 2;
+    gap: 60px; /* space between logo and login form */
+    flex-wrap: wrap; /* responsive wrapping */
+}
+
+/* ===== Logo ===== */
+.logo {
+    text-align: center;
+    animation: fadeSlide 1s ease forwards;
+}
+
+.logo img {
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    margin-bottom: 20px;
+    border: 4px solid rgba(255,255,255,0.6);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    transition: all 0.4s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 16px 40px rgba(0,255,120,0.4);
+}
+
+.logo h2 {
+    color: #c8ffc8;
+    font-size: 48px;
+    font-weight: 600;
+    text-shadow: 0px 4px 12px rgba(0,0,0,0.7);
+}
+
+.logo h1 {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 4px 12px rgba(0,0,0,0.6);
+}
+
+/* ===== Login Wrapper (Glass Frame) ===== */
+.login-wrapper {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    padding: 50px 40px;
+    width: 400px;
+    max-width: 95vw;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.35s ease;
+}
+
+.login-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,255,120,0.35);
+}
+
+/* ===== Login Box Header ===== */
+.login-box h1 {
+    font-size: 30px;
+    color: #e8ffc8;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* ===== Form ===== */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 16px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.login-form input::placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.login-form input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.35);
+    box-shadow: 0 0 12px rgba(0,255,120,0.7);
+}
+
+/* ===== Buttons ===== */
+.login-form button {
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.5px;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.login-form button[name="admin_login"] {
+    background: linear-gradient(45deg, #007a4c, #00b070);
+    color: #fff;
+}
+
+.login-form button[name="admin_login"]:hover {
+    background: linear-gradient(45deg, #00a060, #00ff85);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,255,120,0.5);
+}
+
+.login-form button[name="student_login"] {
+    background: linear-gradient(45deg, #d4a63a, #ffd679);
+    color: #1c1c1c;
+}
+
+.login-form button[name="student_login"]:hover {
+    background: linear-gradient(45deg, #ffca4b, #ffeaa3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,215,0,0.5);
+}
+
+/* ===== Error Message ===== */
+p {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #ffcccc;
+    text-align: center;
+    font-size: 16px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(20px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeSlide {
+    0% {opacity: 0; transform: translateX(-40px);}
+    100% {opacity: 1; transform: translateX(0);}
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .logo h2 {
+        font-size: 32px;
+    }
+
+    .login-wrapper {
+        width: 90%;
+        padding: 35px 25px;
+    }
+
+    .login-form input {
+        padding: 14px;
+    }
+}
